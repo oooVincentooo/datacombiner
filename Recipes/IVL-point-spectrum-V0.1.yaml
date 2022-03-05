@@ -1,0 +1,290 @@
+Browser:
+  file:
+    comment:
+      value: Preset list what files can be searched and filtered *.*, *.xlsx....
+      info: info
+    active:
+      value: 1
+      info: on=1/off=0, enable advanced file search.
+    directories:
+      value: 3
+      info: integer, how many (sub)directories to search.
+    filter:
+      value: '*point*UI*spec2*.datafile%*.xlsx%*.xlxm%*.xls*'
+      info: String, seperated with % (percent symbol).
+Import (text):
+  general:
+    comment:
+      value: 'Column delimiter tab (tab:<\t>, semcolin: <;>, etc.). Decimal symbol  (point:
+        <.>, comma <,>, etc.) and thousants symbol (point: <.>, comma <,>, etc.).'
+      info: info
+    delimiter:
+      value: \t
+      info: 'string column delimiter. Set: none for 1 column.'
+    decimal:
+      value: .
+      info: string decimal seperator
+    thousants:
+      value: ','
+      info: string thousants seperator
+  header:
+    comment:
+      value: 'Import excel *.xlsx files. Active: <1> or <0>. Search for string in
+        file. Search: <first> or <last> instance unique text.  Offset where header
+        starts from found text.'
+      info: info
+    active:
+      value: 1
+      info: on=1/off=0
+    search:
+      value: '@Headline'
+      info: 'string to find. Set: none for absolute offset.'
+    offset:
+      value: 0
+      info: header offset from search text
+    location:
+      value: top
+      info: search top/bottom file
+    rows:
+      value: 50
+      info: search top rows
+    order:
+      value: -1
+      info: find first=1, last=-1 instance
+  start data:
+    comment:
+      value: 'Identify first data row, search unique text and offset to start data.
+        Active: <true> or <false>. Search string. Find: <first> or <last> instance
+        unique text. Offset where data starts from found text.'
+      info: info
+    active:
+      value: 1
+      info: on=1/off=0 when off first row chosen.
+    search:
+      value: '@Headline'
+      info: 'string to find. Set: none for absolute offset.'
+    offset:
+      value: 1
+      info: start data offset from search text
+    location:
+      value: top
+      info: search top/bottom file
+    rows:
+      value: 50
+      info: search top rows
+    order:
+      value: -1
+      info: find first=1, last=-1 instance
+  end data:
+    comment:
+      value: 'Identify last data rom, search unique text and offset to end data. Active:      <true>
+        or <false>. Search string. Find: <first> or <last> instance unique text. Offset
+        where data ends from found text.'
+      info: info
+    active:
+      value: 0
+      info: on=1/off=0 when off last row chosen.
+    search:
+      value: '#Data'
+      info: 'string to find. Set: none for absolute offset.'
+    offset:
+      value: 10
+      info: end data offset from search text
+    location:
+      value: bottom
+      info: search top/bottom file
+    rows:
+      value: 50
+      info: search bottom rows
+    order:
+      value: 1
+      info: find first=1, last=-1 instance
+Import (excel):
+  general:
+    comment:
+      value: Search excel file. Identify sheet by name, "all" import all sheets. Identiy
+        column to search for header and data.
+      info: info
+    sheet:
+      value: all
+      info: string=sheetname, all=[import all], 1=[import first sheet].
+    column:
+      value: 1
+      info: string, search header/start/end in (excel) column number.
+    usecols:
+      value: none
+      info: 'string, only import columns range: None (all column), (e.g. ''A:E'' or
+        ''A,C,E:F'').'
+  header:
+    comment:
+      value: 'Identify column header, search unique text and offset to header. Active:
+        <1> or <0>. Search for string in file. Search: <first> or <last> instance
+        unique text.  Offset where header starts from found text.'
+      info: info
+    active:
+      value: 1
+      info: on=1/off=0
+    search:
+      value: none
+      info: 'string to find. Set: none for absolute offset.'
+    offset:
+      value: 1
+      info: header offset from search text
+    location:
+      value: top
+      info: search top/bottom file
+    rows:
+      value: 150
+      info: search top rows
+  start data:
+    comment:
+      value: 'Identify first data row, search unique text and offset to start data.
+        Active: <true> or <false>. Search string. Find: <first> or <last> instance
+        unique text. Offset where data starts from found text.'
+      info: info
+    active:
+      value: 0
+      info: 'on=1/off=0, when off: second row'
+    search:
+      value: none
+      info: 'string to find. Set: none for absolute offset.'
+    offset:
+      value: 1
+      info: start data offset from search text
+    location:
+      value: top
+      info: search top/bottom file
+    rows:
+      value: 150
+      info: search top rows
+  end data:
+    comment:
+      value: 'Identify last data rom, search unique text and offset to end data. Active:      <true>
+        or <false>. Search string. Find: <first> or <last> instance unique text. Offset
+        where data ends from found text.'
+      info: info
+    active:
+      value: 0
+      info: 'on=1/off=0, when off: last row.'
+    search:
+      value: none
+      info: 'string to find. Set: none for absolute offset.'
+    offset:
+      value: 0
+      info: end data offset from search text
+    location:
+      value: bottom
+      info: search top/bottom file
+    rows:
+      value: 1
+      info: search bottom rows
+ID File:
+  file:
+    comment:
+      value: Column containing filename. Grouping over filename optional.
+      info: info
+    active:
+      value: 1
+      info: on=1/off=0 group by Filename.
+  id:
+    comment:
+      value: Looks for connnected numbers groups in filename. id for grouping is unique
+        number found in filename. Found id number us used in xls export filename.
+      info: info
+    active:
+      value: 1
+      info: on=1/off=0 group by found ID in filename name.
+    select:
+      value: '3'
+      info: 'Select found number as ID. To combine use: 1, 2, 3.'
+    order:
+      value: left
+      info: 'String: left/right. Select number from left or right of filename.'
+ID Custom:
+  create:
+    comment:
+      value: Create custom columns ID's round data to enable grouping. Individual
+        ID's can be turned off and on. file.
+      info: info
+    count:
+      value: 1
+      info: Integer, select maximum number of filters.
+  custom 1:
+    comment:
+      value: Custom column number for grouping. Index is enumeration rows every individual
+      info: info
+    active:
+      value: 1
+      info: on=1/off=0 group by custom column. Index is enumeration rows every individual.
+    column:
+      value: 2
+      info: Integer, select column number for grouping. Set 0 for Index (rownum).
+    decimals:
+      value: 0.0
+      info: Round column value to decimal places. Only for grouping column (construct=active).
+Filter:
+  create:
+    comment:
+      value: Create custom filters, specify the maximum number of filters. Individual
+        filters can be turned off and on. file.
+      info: info
+    count:
+      value: 2
+      info: Integer, select maximum number of filters.
+  filter 1:
+    comment:
+      value: Filtering dataset on specified column.
+      info: info
+    active:
+      value: 1
+      info: on=1/off=0, enable or disable filter.
+    column:
+      value: 5
+      info: Integer, select column for filtering.
+    minimum:
+      value: 380
+      info: decimal, minimum value (. is decimal seperator).
+    maximum:
+      value: 780
+      info: decimal, maximum value (. is decimal seperator).
+  filter 2:
+    comment:
+      value: Filtering dataset on specified column.
+      info: info
+    active:
+      value: 1
+      info: on=1/off=0, enable or disable filter.
+    column:
+      value: 6
+      info: Integer, select column for filtering.
+    minimum:
+      value: 0.5
+      info: decimal, minimum value (. is decimal seperator).
+    maximum:
+      value: 1000000
+      info: decimal, maximum value (. is decimal seperator).
+Output:
+  total:
+    comment:
+      value: Export raw data to excel sheet as appended in rows and/or columns.
+      info: info
+    rows:
+      value: 0
+      info: on=1/off=0 export data appended as rows.
+    columnar:
+      value: 0
+      info: on=1/off=0 export excel appended columnar, maximum is 15.000 columns.
+  statistics:
+    comment:
+      value: 'Groups data by rows. Statistics: mean, median, std, percentiles (5%,
+        25%, 50%, 75%, 95%) and confidence intervals upper/lower bound (95%).'
+      info: info
+    initial:
+      value: 1
+      info: 'on=1/off=0 pre-statistics, group data and determine mean per data column. '
+    total:
+      value: 1
+      info: on=1/off=0 total statistics on complete appended data (per data column).
+    groupby:
+      value: 2,3
+      info: 'Select columns to group by. To combine use: 1, 2, 3.'
