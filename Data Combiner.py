@@ -38,7 +38,7 @@ class MainApp(tk.Frame): # Inherits Frame methods
     def __init__(self, master=None, **kwargs):
         tk.Frame.__init__(self, master, **kwargs) # Initializes the frame
         
-        self.version="version: 0.0142"
+        self.version="version: 0.0144"
         self.master=master
         self.createWidgets()   
 
@@ -895,8 +895,8 @@ class MainApp(tk.Frame): # Inherits Frame methods
 
 
     def table_txtsetdata(self):
-        self.df=pd.read_csv(self.path, delimiter=self.seperator, decimal=self.decimal, thousands=self.thousants, 
-                               skiprows=self.start,nrows=self.end-self.start+1, header=None, encoding="unicode_escape")
+        self.df=pd.read_csv(self.path, delimiter=self.seperator, decimal=self.decimal, thousands=self.thousants,
+                               skiprows=self.start,nrows=self.end-self.start+1, header=None, encoding_errors='ignore')
         
         
     def table_txtstartend(self):
